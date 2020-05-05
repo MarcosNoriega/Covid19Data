@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <select name="" id="" class="form-control" (change)="consultar(select.value)" #select>
+        <option selected disabled>Selecciona Pais</option>
+        <option *ngFor="let pais of paises" [value]="pais.Country">{{pais.Country}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4" *ngIf="pais.length != 0">
+    <div class="col-md-6">
+        <div class="card sombra">
+            <div class="card-header">
+              <h1>Covid 19 - {{paisUltimo.Country}}</h1>
+            </div>
+        
+            <div class="card-body">
+              <p class="text-center">Casos Confirmados: <span class="badge badge-secondary">{{paisUltimo.Confirmed}}</span></p>
+              <p class="text-center">Muertes: <span class="badge badge-danger">{{paisUltimo.Deaths}}</span></p>
+              <p class="text-center">Recuperados: <span class="badge badge-success">{{paisUltimo.Recovered}}</span></p>
+            </div>
+          </div>
+    </div>
+    
+  </div>
+</div>

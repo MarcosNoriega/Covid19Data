@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+.sombra {
+    -webkit-box-shadow: 2px 7px 11px 1px rgba(0,0,0,0.63);
+    -moz-box-shadow: 2px 7px 11px 1px rgba(0,0,0,0.63);
+    box-shadow: 2px 7px 11px 1px rgba(0,0,0,0.63);
+}
+
+body {
+    background: #34e89e;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #0f3443, #34e89e);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #0f3443, #34e89e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

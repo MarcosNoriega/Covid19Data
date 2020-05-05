@@ -1,0 +1,86 @@
+<div class="container mt-4">
+
+    <div class="row justify-content-center mt-5" *ngIf="loading">
+      <div class="col-1">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+  <div class="row" *ngIf="!loading">
+    <div class="col-md-6">
+      <div class="card sombra">
+        <div class="card-header">
+          <h1>Covid 19 en el mundo</h1>
+        </div>
+
+        <div class="card-body">
+          <p class="text-center">Casos Confirmados: <span class="badge badge-secondary">{{world.TotalConfirmed}}</span></p>
+          <p class="text-center">Muertes: <span class="badge badge-danger">{{world.TotalDeaths}}</span></p>
+          <p class="text-center">Recuperados: <span class="badge badge-success">{{world.TotalRecovered}}</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="card sombra">
+        <div class="card-header">
+          <h1>Covid en Argentina</h1>
+        </div>
+
+        <div class="card-body">
+          <p class="text-center">Casos Confirmados: <span class="badge badge-secondary">{{argentina.Confirmed}}</span></p>
+          <p class="text-center">Muertes: <span class="badge badge-danger">{{argentina.Deaths}}</span></p>
+          <p class="text-center">Recuperados: <span class="badge badge-success">{{argentina.Recovered}}</span></p>
+          <p class="text-center">Fecha: <span class="badge badge-dark">{{argentina.Date | date:'dd/MM/yyyy'}}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card sombra mt-4" *ngIf="!loading">
+    <div class="card-body">
+      Fecha: {{tablaCovid.Date | date:'dd/MM/yyyy'}}
+      <table class="table table-striped mt-4">
+        <thead class="thead-dark">
+          <tr>
+            <th>Pais</th>
+            <th>Infectados</th>
+            <th>Recuperados</th>
+            <th>Muertos</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let pais of tablaCovid.Countries">
+            <td>{{pais.Country}}</td>
+            <th>{{pais.TotalConfirmed}}</th>
+            <td>{{pais.TotalRecovered}}</td>
+            <td>{{pais.TotalDeaths}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!--<table class="table table-striped mt-4">
+    <thead class="thead-dark">
+        <tr>
+            <th>Pais</th>
+            <th>Infectados</th>
+            <th>Recuperados</th>
+            <th>Muertos</th>
+          </tr>
+    </thead>
+   
+    <tbody>
+        <tr *ngFor="let pais of tablaCovid">
+            <td>{{pais.country}}</td>
+            <td>{{pais.infected}}</td>
+            <td>{{pais.recovered}}</td>
+            <td>{{pais.deceased}}</td>
+          </tr>
+    </tbody>
+  </table>-->
+</div>
